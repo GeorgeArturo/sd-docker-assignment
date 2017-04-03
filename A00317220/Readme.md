@@ -13,7 +13,7 @@
 ### Procedimiento
 
 * Montar el mirror. Para esto se uso el siguiente vagrantfile
-```
+``` python
 VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
