@@ -68,7 +68,7 @@ $ aptly publish snapshot xenial-snapshot-postgresql
 ### Construccion del contenedor
 
 * Se construyo el siguiente Dockerfile (disponible en este repositorio)
-
+``` python
 FROM ubuntu:16.04
 MAINTAINER tebannew@gmail.com	
 
@@ -89,45 +89,45 @@ RUN apt-get install postgresql -y
 #CMD service apache2 start && tail -f /var/log/apache2/access.log
 EXPOSE 5432
 CMD postgresql -m http.server 5432
-
+```
 * Luego se ejecutaron los siguientes comandos
-
+```
 $ docker build -t ubuntu_postgresql:1.0 .
 
 $ docker run -it --rm ubuntu_postgresql:1.0 /bin/bash
-
+```
 ### Pruebas de funcionamiento
-
+```
 psql --version
 foto
-
+```
 * Activación postgres
-
+```
  $ /etc/init.d/postgresql start
-
+```
 * Luego cambiamos al usuario que viene por defecto para poder trabajar en las bases de datos
-
+```
 $ su - postgres
-
+```
 * Vamos a la consola de postgres
-
+```
 $ psql
-
+```
 * Creamos la base de datos
-
+```
 CREATE DATABASE pruebaFuncionamiento;
-
+```
 * Verificamos que este 
-
+```
 \1
-
+```
 * Nos conectamos
-
+```
 \c pruebafuncionamiento
-
+```
 
 * Luego creamos una tabla
-
+``` python
 CREATE TABLE Persons (
     PersonID int,
     LastName varchar(255),
@@ -135,17 +135,17 @@ CREATE TABLE Persons (
     Address varchar(255),
     City varchar(255) 
 );
-
+```
 * comprobamos que se creo correctamente
 
 foto
 
 * Insertamos datos
-
+``` python
 INSERT INTO persons (PersonID, LastName, FirstName, Address, City) VALUES (2, 'Molano', 'Oscar', 'Icesi', 'Cali');
 INSERT INTO persons (PersonID, LastName, FirstName, Address, City) VALUES (3, 'Ocampo', 'Daniel', 'Icesi', 'Cali');
-
+```
 * Y por ultimo realizamos una consulta
-
+``` python
 SELECT Address, City FROM persons;
-
+```
