@@ -31,7 +31,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
 end
 ```
-(Este vagrantfile se encuentra en este repositorio)
+
 
 * Una vez montado el mirror se genero y exporto una llave para seguridad
 
@@ -72,7 +72,7 @@ $ aptly publish snapshot xenial-snapshot-postgresql
 
 ### Construccion del contenedor
 
-* Se construyo el siguiente Dockerfile (disponible en este repositorio)
+* Se construyo el siguiente Dockerfile 
 ``` python
 FROM ubuntu:16.04
 MAINTAINER tebannew@gmail.com	
