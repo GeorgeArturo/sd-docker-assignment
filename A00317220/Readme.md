@@ -6,6 +6,7 @@
 
 ### Objetivo 
 1.Crear una maquina virtual para que sirva como mirror que contenga los archivos de Postgresql.
+
 2.Crear un contenedor que descargue Postgresql desde el mirror creado.
 
 
