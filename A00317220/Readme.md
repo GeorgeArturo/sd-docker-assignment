@@ -33,34 +33,34 @@ end
 * Una vez montado el mirror se genero y exporto una llave para seguridad
 
 *   Se usaron los siguientes comandos:
-
+```
 $ gpg --gen-key
 $ cat /dev/urandom
 $ gpg --no-default-keyring --keyring /usr/share/keyrings/ubuntu-archive-keyring.gpg --export | gpg --no-default-keyring --keyring trustedkeys.gpg --import
 $ gpg --export --armor > my_key.pub
 $ scp vagrant@192.168.131.10:/tmp/my_key.pub .
-
+```
 * una vez copiada la llave al equipo remoto se procedio a instalar aptly en el mirror(maquina virtual)
 * Se usaron los siguientes comandos
-
+```
 $ echo deb http://repo.aptly.info/ squeeze main > /etc/apt/sources.list
 $ sudo apt-key adv --keyserver keys.gnupg.net --recv-keys 9E3E53F19C7DE460
 $ apt-get update
 $ apt-get install aptly
-
+```
 * Luego de instalar aptly creamos el mirror a traves de aptly con el siguiente comando
-
+```
 $ aptly mirror create -architectures=amd64 -filter='Priority (required) | Priority (important) | Priority (standard) | postgresql' -filter-with-deps xenial-main-postgresql http://mirror.upb.edu.co/ubuntu/ xenial main
-
+```
 * Y lo actualizamos para que descargue los paquetes necesarios
-
+```
 $ aptly mirror update xenial-main-postgresql
-
+```
 * Para que los paquetes fueran visibles para otras maquinas se ejecutaron los siguientes comandos
-
+```
 $ aptly snapshot create xenial-snapshot-postgresql from mirror xenial-main-postgresql
 $ aptly publish snapshot xenial-snapshot-postgresql
-
+```
 * Finalmente se inicia el mirror.
 
 
