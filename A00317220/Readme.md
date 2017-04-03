@@ -98,7 +98,7 @@ $ docker run -it --rm ubuntu_postgresql:1.0 /bin/bash
 Pruebas de funcionamiento
 
 psql --version
-foto
+kkk
 
 ACtivación postgres
 
