@@ -1,6 +1,7 @@
 
-### Estudiantes : 
+### Estudiantes: 
 **Jorge Hernandez - A00317220**
+
 **Esteban Camacho - A00320168**
 
 ### Objetivo 
