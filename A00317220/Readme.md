@@ -13,7 +13,7 @@
 ### Procedimiento
 
 * Montar el mirror. Para esto se uso el siguiente vagrantfile
-
+```
 VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
@@ -27,7 +27,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     end
   end
 end
-
+```
 (Este vagrantfile se encuentra en este repositorio)
 
 * Una vez montado el mirror se genero y exporto una llave para seguridad
