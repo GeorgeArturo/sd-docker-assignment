@@ -59,6 +59,8 @@ $ aptly mirror create -architectures=amd64 -filter='Priority (required) | Priori
 ```
 $ aptly mirror update xenial-main-postgresql
 ```
+![GitHub Logo0](Imagenes/instalandoPostgres.png)
+
 * Para que los paquetes fueran visibles para otras maquinas se ejecutaron los siguientes comandos
 ```
 $ aptly snapshot create xenial-snapshot-postgresql from mirror xenial-main-postgresql
@@ -99,11 +101,16 @@ $ docker build -t ubuntu_postgresql:1.0 .
 
 $ docker run -it --rm ubuntu_postgresql:1.0 /bin/bash
 ```
+
+![GitHub Logo0](Imagenes/run.png)
+
 ### Pruebas de funcionamiento
 ```
 psql --version
-foto
+
 ```
+![GitHub Logo0](Imagenes/version.png)
+
 * Activación postgres
 ```
  $ /etc/init.d/postgresql start
@@ -121,9 +128,12 @@ $ psql
 CREATE DATABASE pruebaFuncionamiento;
 ```
 * Verificamos que este 
+
 ```
 \1
 ```
+![GitHub Logo0](Imagenes/funcionamiento.png)
+
 * Nos conectamos
 ```
 \c pruebafuncionamiento
@@ -141,7 +151,7 @@ CREATE TABLE Persons (
 ```
 * comprobamos que se creo correctamente
 
-foto
+![GitHub Logo0](Imagenes/creacionTabla.png)
 
 * Insertamos datos
 ``` python
@@ -152,3 +162,4 @@ INSERT INTO persons (PersonID, LastName, FirstName, Address, City) VALUES (3, 'O
 ``` python
 SELECT Address, City FROM persons;
 ```
+![GitHub Logo0](Imagenes/busqueda.png)
