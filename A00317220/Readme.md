@@ -30,7 +30,7 @@ end
 
 * Una vez montado el mirror se genero y exporto una llave para seguridad
 
-Se usaron los siguientes comandos:
+*   Se usaron los siguientes comandos:
 
 $ gpg --gen-key
 $ cat /dev/urandom
