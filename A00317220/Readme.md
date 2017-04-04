@@ -163,3 +163,29 @@ INSERT INTO persons (PersonID, LastName, FirstName, Address, City) VALUES (3, 'O
 SELECT Address, City FROM persons;
 ```
 ![GitHub Logo0](Imagenes/busqueda.png)
+
+
+* Anexos
+* Para ver que volumenes hay
+
+```
+docker volume ls
+```
+* Para ver información del volumen
+```
+docker volume inspect postgresql_data
+```
+
+* Para ver en el contenedor donde esta el volumen
+```
+show data_directory;
+```
+
+* Para ver en donde esta el volumen desde la maquina remota
+```
+cd /var/lib/docker/
+```
+* Para ver la información del volumen
+```
+/var/lib/docker/volumes/postgresql_data/_data# ls
+```
