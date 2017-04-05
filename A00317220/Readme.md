@@ -171,9 +171,9 @@ SELECT Address, City FROM persons;
 ```
 docker volume ls
 ```
-* Para ver información del volumen
+* Para ver información del punto del montaje del volumen
 ```
-docker volume inspect postgresql_data
+docker volume inspect nombreVolumen
 ```
 
 * Para ver en el contenedor donde esta el volumen
@@ -187,5 +187,9 @@ cd /var/lib/docker/
 ```
 * Para ver la información del volumen
 ```
-/var/lib/docker/volumes/postgresql_data/_data# ls
+/var/lib/docker/volumes/nombreVolumen/_data# ls
+```
+* para crear un volumen 
+```
+docker volume create --name parametro
 ```
