@@ -193,3 +193,7 @@ cd /var/lib/docker/
 ```
 docker volume create --name parametro
 ```
+* Montar un contenedor con volumen
+```
+docker run -it --rm -v postgresql_data2:/var/lib/postgresql/9.5/main ubuntu_postgresql:1.0 /bin/bash
+```
