@@ -67,7 +67,9 @@ $ aptly snapshot create xenial-snapshot-postgresql from mirror xenial-main-postg
 $ aptly publish snapshot xenial-snapshot-postgresql
 ```
 * Finalmente se inicia el mirror.
-
+ ```
+ aptly serve 
+```
 
 
 ### Construccion del contenedor
@@ -193,7 +195,7 @@ cd /var/lib/docker/
 ```
 docker volume create --name parametro
 ```
-* Montar un contenedor con volumen
+* Iniciar un contenedor montando un volumen postgresql_data2
 ```
 docker run -it --rm -v postgresql_data2:/var/lib/postgresql/9.5/main ubuntu_postgresql:1.0 /bin/bash
 ```
